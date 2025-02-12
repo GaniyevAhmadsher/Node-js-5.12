@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "8db0abfd-bf3c-4c96-986f-bf2b0e90636e",
+		"name": "Exem - 5.12",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40691063"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Malik007\",\r\n    \"email\": \"malik007@gmail.com\",\r\n    \"password\": \"6205xxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"malik007@gmail.com\",\r\n    \"password\": \"6205xxxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhYTA1YmZkMzVkMDU4NjU5M2QyNTA1IiwiaWF0IjoxNzM5Mzc4OTE2LCJleHAiOjE3MzkzODA3MTZ9.-ZwCH09PUPhtWtD5pzb-Qb7fUncsyJyNTz7WLNot1k4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sun'iy intellekt kelajagi\",\r\n    \"content\": \"Sun'iy intellekt kundalik hayotimizga tez kirib kelmoqda.\",\r\n    \"category\": \"Texnologiya\",\r\n    \"views\": 27968\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/posts/create",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"posts",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts By Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/posts/category/Salomatlik",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"posts",
+								"category",
+								"Salomatlik"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Posts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/posts/top",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"posts",
+								"top"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post By id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sun'iy intellekt kelajagi\",\r\n    \"content\": \"Sun'iy intellekt kundalik hayotimizga tez kirib kelmoqda.\",\r\n    \"category\": \"Texnologiya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/posts/67acd342a7ec7121889880f4",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"posts",
+								"67acd342a7ec7121889880f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts of User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjdhYTA1YmZkMzVkMDU4NjU5M2QyNTA1IiwiaWF0IjoxNzM5Mzc4OTE2LCJleHAiOjE3MzkzODA3MTZ9.-ZwCH09PUPhtWtD5pzb-Qb7fUncsyJyNTz7WLNot1k4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/user/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/posts/67aa397727d211777555ac91",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"posts",
+								"67aa397727d211777555ac91"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
