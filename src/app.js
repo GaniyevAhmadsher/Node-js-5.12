@@ -17,7 +17,7 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 8080;
 const URL = process.env.DB_URL;
 
-(async () => {
+const running = async () => {
   try {
     await connectDB(URL);
     console.log(`DB Connected`);
@@ -25,4 +25,5 @@ const URL = process.env.DB_URL;
   } catch ({ message }) {
     console.error(message);
   }
-})();
+};
+running();
